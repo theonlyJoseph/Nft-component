@@ -1,5 +1,6 @@
 *, *::before, *::after {
     box-sizing: border-box;
+    /* outline: 1px solid white;   */
   }
   * {
     margin: 0;
@@ -24,3 +25,117 @@
   #root, #__next {
     isolation: isolate;
   }
+
+  :root {
+    /** Colors */
+    --Primary-Soft-blue: hsl(215, 51%, 70%);
+    --Primary-Cyan: hsl(178, 100%, 50%);
+    --Main-baground: hsl(217, 54%, 11%);
+    --card-background: hsl(216, 50%, 16%);
+    --border: hsl(215, 32%, 27%);
+    
+    /** Fonts */
+    --font-primary: Outfit;
+    --fw-light: 300;
+    --fw-regular: 400;
+    --fw-semi-bold: 600;
+    --font-size: 1.2rem;
+  }
+
+  body {
+    width: 100%;
+    display: grid;
+    place-content: center;
+    background-color: var(--Main-baground);
+    font-family: var(--font-primary);
+    font-size: var(--font-size);
+    color: white;
+  }
+
+  .card-container {
+    background-color: var(--card-background);
+    margin: 2rem;
+    padding: 1.5rem;
+    border-radius: 1rem;
+}
+
+.nft-card {
+    display: grid;
+    gap: 1rem;
+}
+
+#nft {    
+    border-radius: 8px;
+}
+
+.nft-card :is(h2) {
+    font-weight: var(--fw-semi-bold);
+    cursor: pointer;
+}
+
+.nft-card :hover :is(h2) {
+    color: var(--Primary-Cyan);
+}
+
+.nft-card :is(p) {
+    font-weight: var(--fw-light);
+    color: var(--Primary-Soft-blue);
+}
+
+
+.price-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 1rem;
+}
+
+#price, #remaining-time {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#price :is(p) , #remaining-time :is(p) {
+    padding-left: 0.3rem;
+    font-size: 1rem;
+    font-weight: var(--fw-light);
+    
+}
+
+#price :is(p) {
+    color: var(--Primary-Cyan);
+}
+
+#remaining-time :is(p) {
+    color: var(--Primary-Soft-blue);
+}
+
+.creator-detail {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    font-weight: var(--fw-light);
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.creator-detail img {
+    display: block;
+    max-width: 15%;
+    border: 1px solid white;
+    border-radius: 50px;
+    margin-right: 1rem;
+    
+}
+
+.creator-detail :is(span) {
+    color: #ffffff;
+}
+
+.creator-detail :hover :is(span) {
+    color: var(--Primary-Cyan);
+}
+
+/** Active states */
