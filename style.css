@@ -30,7 +30,7 @@
     /** Colors */
     --Primary-Soft-blue: hsl(215, 51%, 70%);
     --Primary-Cyan: hsl(178, 100%, 50%);
-    --Main-baground: hsl(217, 54%, 11%);
+    --Main-background: hsl(217, 54%, 11%);
     --card-background: hsl(216, 50%, 16%);
     --border: hsl(215, 32%, 27%);
     
@@ -46,7 +46,7 @@
     width: 100%;
     display: grid;
     place-content: center;
-    background-color: var(--Main-baground);
+    background-color: var(--Main-background);
     font-family: var(--font-primary);
     font-size: var(--font-size);
     color: white;
@@ -64,9 +64,49 @@
     gap: 1rem;
 }
 
-#nft {    
-    border-radius: 8px;
+/* Overlay effect */
+
+.container {
+  position: relative;
+  width: 100%;
+
 }
+
+#nft {    
+  border-radius: 8px;
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+
+
+.overlay {
+  display: grid;
+  place-content: center;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: .6s ease;
+  background-color: var(--Primary-Soft-blue);
+}
+
+.overlay img {
+  display: grid;
+  place-content: center;
+}
+
+.overlay:hover {
+  opacity: 0.7;
+}
+
+
+/**---------------------------------- */
 
 .nft-card :is(h2) {
     font-weight: var(--fw-semi-bold);
