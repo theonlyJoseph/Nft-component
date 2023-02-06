@@ -66,7 +66,7 @@
 
 /* Overlay effect */
 
-.container {
+.img-container {
   position: relative;
   width: 100%;
 
@@ -113,7 +113,7 @@
     cursor: pointer;
 }
 
-.nft-card :hover :is(h2) {
+.nft-card :is(h2):hover {
     color: var(--Primary-Cyan);
 }
 
@@ -155,7 +155,7 @@
 .creator-detail {
     display: flex;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: space-between;
     font-weight: var(--fw-light);
     font-size: 1rem;
     cursor: pointer;
@@ -166,7 +166,6 @@
     max-width: 15%;
     border: 1px solid white;
     border-radius: 50px;
-    margin-right: 1rem;
     
 }
 
@@ -178,4 +177,80 @@
     color: var(--Primary-Cyan);
 }
 
-/** Active states */
+/** Large screen */
+
+@media screen and (min-width: 15em) {
+  .card-container {
+    max-width: 350px;
+    margin: 3rem;
+  }
+}
+
+/**.............................................*/
+
+
+/** Dark-mode toggle*/
+
+.checkbox-label {
+  display: block;
+  width: 40px;
+  height: 40px;
+  border-radius: 50px;
+  background-color: #fff;
+  position: relative;
+  box-shadow:inset 0px 0px 3px 2px rgb(219, 217, 217);
+  cursor: pointer;
+  transition: ease 0.5s;
+}
+
+.checkbox-label svg {
+  position: absolute;
+  z-index: 10;
+  width: 30px;
+  height: 30px;
+}
+
+.checkbox-label svg.sun-icon {
+  top: 5px;
+  left: 5px;
+  fill:#000000;
+  transition: 0.3s;
+  display: block;
+}
+
+.checkbox-label svg.moon-icon {
+  top: 6px;
+  left: 5px;
+  fill:#7e7e7e;
+  transition: 0.3s;
+  display: none;
+}
+
+input:checked + .checkbox-label svg.sun-icon {
+  fill:#7e7e7e;
+  display: none;
+}
+
+input:checked + .checkbox-label svg.moon-icon {
+  fill:#ffffff;
+  display: block;
+}
+
+
+input {
+  width: 0;
+  height: 0;
+  display: none;
+
+}
+
+input:checked + label {
+  background-color: var(--card-background);
+  box-shadow:inset 0px 0px 3px 2px #000000;
+}
+
+input:checked + label::after {
+  /* background: linear-gradient(180deg, #777, #3a3a3a); */
+}
+
+/**.......................................*/
