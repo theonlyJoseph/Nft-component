@@ -31,7 +31,7 @@
     --Primary-Soft-blue: hsl(215, 51%, 70%);
     --Primary-Cyan: hsl(178, 100%, 50%);
     --Main-background: hsl(217, 54%, 11%);
-    --card-background: hsl(216, 50%, 16%);
+    --card-background: hsl(223, 56%, 10%);
     --border: hsl(215, 32%, 27%);
     
     /** Fonts */
@@ -58,6 +58,15 @@
     padding: 1.5rem;
     border-radius: 1rem;
 }
+
+/** Dark version */
+
+.card-container--dark {
+  background-color: hsl(226, 64%, 6%);
+}
+
+/**.....................................*/
+
 
 .nft-card {
     display: grid;
